@@ -1,0 +1,33 @@
+#BEST CASE
+def search(arr, n, x):
+    for i in range(0, n):
+        if (arr[i] == x):
+            return i
+    return -1
+
+
+# Function call
+arr = [2, 3, 4, 10, 40]
+x, n = 10, len(arr)
+result = search(arr, n, x)
+if (result == -1):
+    print("Element is not present in array")
+else:
+    print("Element is present at index", result)
+
+# WORST CASE OF LINEAR SEARCH WHEN THE SEARCH ELEMENT FOUND AT THE LAST OR SECOND HALF
+def worstLinearSearch(arr, left, right, position, searchElement):
+    for i in range(0, len(arr)):
+        if arr[left] == searchElement:
+            return left
+        if arr[right] == searchElement:
+            return right
+        left += 1
+        right -= 1
+        if position == -1:
+            return -1
+
+
+arr = [1, 2, 3, 4, 5]
+searchElement = 5
+print(worstLinearSearch(arr, 0, (len(arr) - 1), -1, searchElement))
