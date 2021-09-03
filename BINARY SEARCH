@@ -1,0 +1,22 @@
+# BINARY_SEARCH
+def binarySearch(arr, find):
+    L = 0
+    R = len(arr) - 1
+    while L <= R:
+        mid = (L + R) // 2
+        if arr[mid] < find:
+            L = mid + 1
+        elif arr[mid] > find:
+            R = mid - 1
+        else:
+            return mid
+    return -1
+
+
+arr = [2, 4, 6, 8, 12, 15, 16, 18]
+find = int(input("enter number"))
+result = binarySearch(arr, find)
+if result != -1:
+    print("Element is availabe on this index", result)
+else:
+    print("Element is not available", result)
